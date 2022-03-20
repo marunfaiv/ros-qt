@@ -14,7 +14,7 @@ find_package(catkin REQUIRED COMPONENTS
 )
 
 include_directories(${catkin_INCLUDE_DIRS})
-
+  
 find_package( Qt5 COMPONENTS Widgets Core Gui Concurrent REQUIRED )
 set(CMAKE_AUTOMOC ON)
 # set(CMAKE_AUTOUIC ON)
@@ -88,7 +88,7 @@ add_message_files(
 generate_messages(
   DEPENDENCIES
   std_msgs
-  # custom
+  # custom  
 )
 
 ################################################
