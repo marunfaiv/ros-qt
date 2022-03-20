@@ -10,6 +10,7 @@ add_compile_options(-std=c++11)
 find_package(catkin REQUIRED COMPONENTS
   roscpp
   std_msgs
+  message_generation
 )
 
 include_directories(${catkin_INCLUDE_DIRS})
@@ -63,11 +64,11 @@ qt5_wrap_cpp(QT_MOC_HPP
 ##   * add every package in MSG_DEP_SET to generate_messages(DEPENDENCIES ...)
 
 ## Generate messages in the 'msg' folder
-# add_message_files(
-#   FILES
-#   custom.msg
-#   newmessage.msg
-# )
+add_message_files(
+  FILES
+  value.msg
+  # newmessage.msg
+)
 
 ## Generate services in the 'srv' folder
 # add_service_files(
@@ -84,11 +85,11 @@ qt5_wrap_cpp(QT_MOC_HPP
 # )
 
 ## Generate added messages and services with any dependencies listed here
-# generate_messages(
-#   DEPENDENCIES
-#   std_msgs
-#   # custom
-# )
+generate_messages(
+  DEPENDENCIES
+  std_msgs
+  # custom
+)
 
 ################################################
 ## Declare ROS dynamic reconfigure parameters ##
@@ -122,7 +123,7 @@ qt5_wrap_cpp(QT_MOC_HPP
 catkin_package(
 #  INCLUDE_DIRS include
 #  LIBRARIES materi_3
- CATKIN_DEPENDS roscpp std_msgs
+ CATKIN_DEPENDS roscpp std_msgs message_generation
 #  DEPENDS system_lib
 )
 
